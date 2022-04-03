@@ -14,7 +14,32 @@ namespace zaslab
     {
         public v_IngreE()
         {
-            InitializeComponent();
+            InitializeComponent();     
+
         }
+        private void v_IngreE_Load(object sender, EventArgs e)
+        {
+            cmb_Genero.Items.Add("Hombre");
+            cmb_Genero.Items.Add("Mujer");
+            cmb_Genero.SelectedIndex = 0;
+        }
+
+
+        private void cmb_Genero_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Agregar_Click(object sender, EventArgs e)
+        {
+            limpiar();
+        }
+
+        valilimpia vali = new valilimpia();
+        private void limpiar()
+        {
+            vali.limpiarfrm(this);
+        }
+
     }
 }

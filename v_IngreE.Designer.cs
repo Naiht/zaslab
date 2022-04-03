@@ -30,7 +30,7 @@
         {
             this.txt_edad = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtp_fecha = new System.Windows.Forms.DateTimePicker();
             this.cmb_Genero = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.Genero = new System.Windows.Forms.Label();
@@ -38,12 +38,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txt_id = new System.Windows.Forms.TextBox();
             this.txt_nombrea = new System.Windows.Forms.TextBox();
+            this.btn_Agregar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txt_edad
             // 
             this.txt_edad.Enabled = false;
-            this.txt_edad.Location = new System.Drawing.Point(517, 205);
+            this.txt_edad.Location = new System.Drawing.Point(581, 204);
             this.txt_edad.Name = "txt_edad";
             this.txt_edad.Size = new System.Drawing.Size(88, 27);
             this.txt_edad.TabIndex = 21;
@@ -51,26 +52,29 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(462, 209);
+            this.label3.Location = new System.Drawing.Point(526, 208);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 20);
             this.label3.TabIndex = 20;
             this.label3.Text = "Edad: ";
             // 
-            // dateTimePicker1
+            // dtp_fecha
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(190, 204);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(250, 27);
-            this.dateTimePicker1.TabIndex = 19;
+            this.dtp_fecha.CustomFormat = "";
+            this.dtp_fecha.Location = new System.Drawing.Point(190, 204);
+            this.dtp_fecha.Name = "dtp_fecha";
+            this.dtp_fecha.Size = new System.Drawing.Size(250, 27);
+            this.dtp_fecha.TabIndex = 19;
             // 
             // cmb_Genero
             // 
+            this.cmb_Genero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Genero.FormattingEnabled = true;
             this.cmb_Genero.Location = new System.Drawing.Point(190, 144);
             this.cmb_Genero.Name = "cmb_Genero";
-            this.cmb_Genero.Size = new System.Drawing.Size(151, 28);
+            this.cmb_Genero.Size = new System.Drawing.Size(160, 28);
             this.cmb_Genero.TabIndex = 18;
+            this.cmb_Genero.SelectedIndexChanged += new System.EventHandler(this.cmb_Genero_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -122,14 +126,25 @@
             this.txt_nombrea.Size = new System.Drawing.Size(517, 27);
             this.txt_nombrea.TabIndex = 12;
             // 
+            // btn_Agregar
+            // 
+            this.btn_Agregar.Location = new System.Drawing.Point(571, 271);
+            this.btn_Agregar.Name = "btn_Agregar";
+            this.btn_Agregar.Size = new System.Drawing.Size(113, 29);
+            this.btn_Agregar.TabIndex = 22;
+            this.btn_Agregar.Text = "Agregar";
+            this.btn_Agregar.UseVisualStyleBackColor = true;
+            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
+            // 
             // v_IngreE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(726, 290);
+            this.ClientSize = new System.Drawing.Size(726, 312);
+            this.Controls.Add(this.btn_Agregar);
             this.Controls.Add(this.txt_edad);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtp_fecha);
             this.Controls.Add(this.cmb_Genero);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Genero);
@@ -139,6 +154,7 @@
             this.Controls.Add(this.txt_nombrea);
             this.Name = "v_IngreE";
             this.Text = "v_IngreE";
+            this.Load += new System.EventHandler(this.v_IngreE_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,7 +164,7 @@
 
         private TextBox txt_edad;
         private Label label3;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dtp_fecha;
         private ComboBox cmb_Genero;
         private Label label4;
         private Label Genero;
@@ -156,5 +172,6 @@
         private Label label1;
         private TextBox txt_id;
         private TextBox txt_nombrea;
+        private Button btn_Agregar;
     }
 }
